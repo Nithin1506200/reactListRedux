@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import addicon from "../../assets/icons/add-user.png";
 import Themechanger from "../../components/Theme/Themechanger";
 import styles from "./userpage.module.scss";
+import { motion } from "framer-motion";
 export default function Userpage() {
   const users: UserInterface[] = useSelector(
     (state: { users: UserInterface[] }) => {
@@ -12,15 +13,22 @@ export default function Userpage() {
     }
   );
   return (
-    <div className={styles.userpage}>
-      <h1>Users</h1>
+    <motion.div
+      className={styles.userpage}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <Themechanger></Themechanger>
-      <Link to="/edit">
+      <h1>Users</h1>
+
+      <Link to="/edit/addUser">
         <img src={addicon} alt="" />
       </Link>
       {users.map((i) => {
         return <List key={i.id} user={i}></List>;
       })}
-    </div>
+    </motion.div>
   );
 }

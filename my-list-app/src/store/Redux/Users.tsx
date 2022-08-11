@@ -1,21 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
-import testUsers from "../../test/users";
-import { UserInterface } from "../../util/userinfo";
+import { createSlice, SliceCaseReducers } from "@reduxjs/toolkit";
 
-const initialUsers = testUsers;
-const userSlice = createSlice({
+import { UserInterface } from "../../util/userinfo";
+function setlocalstorage(data: any) {
+  localStorage.setItem("users", JSON.stringify(data));
+}
+const userSlice = createSlice<
+  UserInterface[],
+  SliceCaseReducers<UserInterface[]>,
+  string
+>({
   name: "Users",
-  initialState: initialUsers,
+  initialState: [],
   reducers: {
     Add(state: UserInterface[], action: { payload: UserInterface }) {
       state.push(action.payload);
+      setlocalstorage(state);
+      return state;
+    },
+    Insert(state: UserInterface[], action: { payload: UserInterface[] }) {
+      action.payload.forEach((element) => state.push(element));
+      setlocalstorage(state);
       return state;
     },
     Delete(state: UserInterface[], action: { payload: string }) {
       state = state.filter((user) => {
-        console.log(user);
+        // console.log(user);
         return user.id !== action.payload;
       });
+      setlocalstorage(state);
+      return state;
+    },
+    Edit(state: UserInterface[], action: { payload: UserInterface }) {
+      state = state.map((user) => {
+        if (user.id === action.payload.id) {
+          user = action.payload;
+        }
+        return user;
+      });
+      setlocalstorage(state);
       return state;
     },
   },

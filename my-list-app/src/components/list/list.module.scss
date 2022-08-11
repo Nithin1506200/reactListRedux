@@ -13,7 +13,10 @@
     color: var(--front);
   }
   button {
+    border-radius: 10px;
+    border: 2px var(--border) solid;
     color: var(--front);
+    background-color: var(--middle);
   }
   .row {
     width: 100%;

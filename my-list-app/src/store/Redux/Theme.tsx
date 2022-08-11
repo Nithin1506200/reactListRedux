@@ -11,7 +11,7 @@ const mainTheme = [
 const lightTheme = [
   "--front-light",
   "--middle-light",
-  "--middle2--light",
+  "--middle2-light",
   "--back-light",
   "--border-light",
   "--back2-light",
@@ -32,7 +32,17 @@ const neonTheme = [
   "--border-neon",
   "--back2-neon",
 ];
-export type Theme = "LIGHT" | "DARK";
+
+let usersTheme = localStorage.getItem("theme");
+if (usersTheme !== null) {
+  usersTheme = JSON.parse(usersTheme);
+} else {
+  usersTheme = "LIGHT";
+}
+function setlocaltheme(prop: string) {
+  localStorage.setItem("theme", JSON.stringify(prop));
+}
+export type Theme = "LIGHT" | "DARK" | "NEON";
 const ThemeSlice = createSlice({
   name: "Theme",
   initialState: "LIGHT",
@@ -60,7 +70,7 @@ const ThemeSlice = createSlice({
           );
         }
       }
-      console.log(action.payload);
+      setlocaltheme(action.payload);
       state = action.payload;
       return state;
     },

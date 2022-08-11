@@ -1,4 +1,5 @@
 import { UserInterface } from "../../util/userinfo";
+import { Link } from "react-router-dom";
 import styles from "./list.module.scss";
 import { useDispatch } from "react-redux";
 import { userActions } from "../../store/Redux/Users";
@@ -12,6 +13,7 @@ export default function List(props: { user: UserInterface }) {
   function deletecurrent() {
     dispatch(userActions.Delete(props.user.id));
   }
+
   return (
     <>
       <div className={styles.list}>
@@ -48,6 +50,9 @@ export default function List(props: { user: UserInterface }) {
             )}
           </Greywrapper>
           <button onClick={deletecurrent}>Delete</button>
+          <Link to={`/edit/${props.user.id}`}>
+            <button>edit</button>
+          </Link>
         </div>
         <p className={styles.description}>{props.user.description}</p>
       </div>

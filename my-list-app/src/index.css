@@ -13,23 +13,23 @@ code {
 }
 
 :root {
-  --front: rgb(255, 0, 0);
+  --front: rgb(35, 39, 245);
   --middle: black;
-  --middle2-neon: rgba(26, 20, 20, 0.082);
+  --middle2: rgba(29, 18, 18, 0.11);
   --back: white;
-  --back2: white;
-  --border: rgb(36, 255, 36);
+  --back2: rgb(218, 218, 218);
+  --border: rgb(97, 166, 255);
 
-  --front-light: red;
+  --front-light: rgb(35, 39, 245);
   --middle-light: black;
-  --middle2-light: rgba(26, 20, 20, 0.082);
+  --middle2-light: rgba(29, 18, 18, 0.11);
   --back-light: white;
-  --back2-light: white;
+  --back2-light: rgb(218, 218, 218);
   --border-light: rgb(97, 166, 255);
 
   --front-dark: rgb(30, 255, 0);
   --middle-dark: rgb(119, 103, 209);
-  --middle2-dark: rgba(26, 20, 20, 0.082);
+  --middle2-dark: rgba(26, 20, 20, 0.651);
   --back-dark: black;
   --border-dark: rgb(255, 36, 200);
   --back2-dark: rgb(31, 25, 25);
@@ -45,5 +45,5 @@ body {
   background-color: var(--back);
 }
 * {
-  transition: color, background-color 1s;
+  transition: background-color 0.5s;
 }

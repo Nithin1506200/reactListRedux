@@ -5,7 +5,7 @@ import {
   ReactPortal,
 } from "react";
 import styles from "./wrapper.module.scss";
-export default function (props: {
+export default function Greywrapper(props: {
   children:
     | string
     | number
