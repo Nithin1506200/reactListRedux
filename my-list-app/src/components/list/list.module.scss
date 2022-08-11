@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: var(--back2);
   h2 {
     color: var(--front);
   }
@@ -34,5 +35,8 @@
   img {
     height: 1rem;
     width: 1rem;
+  }
+  .description {
+    color: var(--middle);
   }
 }

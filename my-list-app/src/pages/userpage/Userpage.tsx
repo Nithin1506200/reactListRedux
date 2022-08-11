@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { UserInterface } from "../../util/userinfo";
 import { Link } from "react-router-dom";
 import addicon from "../../assets/icons/add-user.png";
+import Themechanger from "../../components/Theme/Themechanger";
 import styles from "./userpage.module.scss";
 export default function Userpage() {
   const users: UserInterface[] = useSelector(
@@ -13,6 +14,7 @@ export default function Userpage() {
   return (
     <div className={styles.userpage}>
       <h1>Users</h1>
+      <Themechanger></Themechanger>
       <Link to="/edit">
         <img src={addicon} alt="" />
       </Link>

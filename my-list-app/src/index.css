@@ -15,13 +15,35 @@ code {
 :root {
   --front: rgb(255, 0, 0);
   --middle: black;
-  --middle2: rgba(26, 20, 20, 0.082);
+  --middle2-neon: rgba(26, 20, 20, 0.082);
   --back: white;
+  --back2: white;
   --border: rgb(36, 255, 36);
+
   --front-light: red;
   --middle-light: black;
+  --middle2-light: rgba(26, 20, 20, 0.082);
   --back-light: white;
-  --front-dark: black;
-  --middle-dark: white;
+  --back2-light: white;
+  --border-light: rgb(97, 166, 255);
+
+  --front-dark: rgb(30, 255, 0);
+  --middle-dark: rgb(119, 103, 209);
+  --middle2-dark: rgba(26, 20, 20, 0.082);
   --back-dark: black;
+  --border-dark: rgb(255, 36, 200);
+  --back2-dark: rgb(31, 25, 25);
+
+  --front-neon: rgb(255, 251, 0);
+  --middle-neon: rgb(136, 24, 127);
+  --middle2-neon: rgba(26, 20, 20, 0.082);
+  --back-neon: rgb(12, 51, 49);
+  --back2-neon: rgb(50, 146, 125);
+  --border-neon: rgb(36, 255, 36);
+}
+body {
+  background-color: var(--back);
+}
+* {
+  transition: color, background-color 1s;
 }

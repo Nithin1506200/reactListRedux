@@ -41,11 +41,15 @@ export default function List(props: { user: UserInterface }) {
             </h4>
           </Greywrapper>
           <Greywrapper>
-            {props.user.saveType === "Draft" ? <p>draft</p> : <p>saved</p>}
+            {props.user.saveType === "Draft" ? (
+              <p className={styles.description}>draft</p>
+            ) : (
+              <p className={styles.description}>saved</p>
+            )}
           </Greywrapper>
           <button onClick={deletecurrent}>Delete</button>
         </div>
-        <p>{props.user.description}</p>
+        <p className={styles.description}>{props.user.description}</p>
       </div>
     </>
   );
