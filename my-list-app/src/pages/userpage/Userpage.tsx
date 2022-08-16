@@ -21,7 +21,7 @@ export default function Userpage() {
       transition={{ duration: 1 }}
     >
       <Themechanger></Themechanger>
-      <h1>Users</h1>
+      <h1 data-testid="header">Users</h1>
 
       <Link to="/edit/addUser">
         <img src={addicon} alt="" />

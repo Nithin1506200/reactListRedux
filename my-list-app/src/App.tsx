@@ -33,6 +33,7 @@ function App() {
 
       dispatch(themeActions.ChangeTheme(theme));
     }
+    console.log("use effect running");
   }, [dispatch]);
   return (
     <>

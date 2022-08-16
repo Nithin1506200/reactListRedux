@@ -32,6 +32,9 @@
     display: inline-block;
     color: var(--front);
   }
+  button:hover {
+    cursor: pointer;
+  }
   input,
   button,
   textarea {
