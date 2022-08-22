@@ -10,6 +10,10 @@ import { useDispatch } from "react-redux";
 import { themeActions } from "./store/Redux/Theme";
 import { Theme } from "./store/Redux/Theme";
 import { AnimatePresence } from "framer-motion";
+
+/**
+ * app is used for this things
+ */
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -33,7 +37,7 @@ function App() {
 
       dispatch(themeActions.ChangeTheme(theme));
     }
-    console.log("use effect running");
+   // console.log("use effect running");
   }, [dispatch]);
   return (
     <>

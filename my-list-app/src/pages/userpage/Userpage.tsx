@@ -6,6 +6,14 @@ import addicon from "../../assets/icons/add-user.png";
 import Themechanger from "../../components/Theme/Themechanger";
 import styles from "./userpage.module.scss";
 import { motion } from "framer-motion";
+
+/**
+ * this is a user page where the list renders.
+ * this will be the first page to get rendered
+ *
+ * @param {string} props - a name
+ * @returns jsx element
+ */
 export default function Userpage() {
   const users: UserInterface[] = useSelector(
     (state: { users: UserInterface[] }) => {
