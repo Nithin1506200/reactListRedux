@@ -1,6 +1,6 @@
 # reactListRedux
 
-a project given by Diraj - `frontend lead`
+a project given by Dipak mamdapure - `frontend lead`
 
 ## todo
 
