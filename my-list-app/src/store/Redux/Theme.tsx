@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const themeVariables: any = document.querySelector(":root");
+const theme = ["light", "dark"];
 const mainTheme = [
   "--front",
   "--middle",
